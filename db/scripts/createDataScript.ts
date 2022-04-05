@@ -3,6 +3,7 @@ import fetch from "cross-fetch";
 const createDataScript = async (pokemonid: string) => {
   const searchingForPokemon = pokemonid.toLocaleLowerCase();
 
+  /* It's fetching the data from the pokemon API. */
   const pokemonData = await fetch(
     "https://pokeapi.co/api/v2/pokemon/" + searchingForPokemon
   );
@@ -25,6 +26,7 @@ const createDataScript = async (pokemonid: string) => {
 
   //   const urlString = new URLSearchParams(textToTranslate);
 
+  /* It's fetching the data from the Shakespeare API. */
   const shakesPTranslator = await fetch(
     "https://api.funtranslations.com/translate/shakespeare?text=" +
       textToTranslate.text

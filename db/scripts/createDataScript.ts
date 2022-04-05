@@ -31,11 +31,11 @@ const createDataScript = async (pokemonid: string) => {
   );
   const jsonShakesPTranslator = await shakesPTranslator.json();
 
-  console.log({
+  return {
     name: jsonPokemonData.name,
     description: jsonShakesPTranslator.contents.translated,
     sprite: jsonPokemonData.sprites.front_default,
-  });
+  };
 };
 
 export { createDataScript };

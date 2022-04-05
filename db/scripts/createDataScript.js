@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
+exports.createDataScript = void 0;
 var cross_fetch_1 = require("cross-fetch");
 var createDataScript = function (pokemonid) { return __awaiter(void 0, void 0, void 0, function () {
     var searchingForPokemon, pokemonData, jsonPokemonData, pokemonDescription, jsonPokemonDescription, newStrWithoutJS, textToTranslate, shakesPTranslator, jsonShakesPTranslator;
@@ -66,16 +67,15 @@ var createDataScript = function (pokemonid) { return __awaiter(void 0, void 0, v
                 return [4 /*yield*/, shakesPTranslator.json()];
             case 6:
                 jsonShakesPTranslator = _a.sent();
-                console.log({
-                    name: jsonPokemonData.name,
-                    description: jsonShakesPTranslator.contents.translated,
-                    sprite: jsonPokemonData.sprites.front_default
-                });
-                return [2 /*return*/];
+                return [2 /*return*/, {
+                        name: jsonPokemonData.name,
+                        description: jsonShakesPTranslator.contents.translated,
+                        sprite: jsonPokemonData.sprites.front_default
+                    }];
         }
     });
 }); };
-createDataScript("pikachu");
+exports.createDataScript = createDataScript;
 /*jsonShakesPTranslator.contents.translated,
 "Access-Control-Allow-Origin": "http://localhost:3000",
         "Access-Control-Allow-Credentials": "true",
